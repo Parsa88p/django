@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+    UserProfile
+{% endblock %}
+
+{% block body %}
+    <h1 xmlns="http://www.w3.org/1999/html">UserProfile</h1>
+<table>
+<tr>
+    <th>
+        user:{{ profile.user.username }}
+    </th>
+</tr>
+<tr>
+    <th>
+       name:{{ profile.user.first_name }}
+    </th>
+</tr>
+<tr>
+    <th>
+        lastname:{{ profile.user.last_name }}
+    </th>
+</tr>
+<tr>
+    <th>
+        email:{{ profile.user.email }}
+    </th>
+</tr>
+<tr>
+    <th>
+        phone:{{ profile.phone }}
+    </th>
+</tr>
+<tr>
+    <th>
+        address:{{ profile.address }}
+    </th>
+</tr>
+</table>
+    <br>
+    <button class="btn btn-primary">
+    <a href="{% url 'accounts:update' %}"><font color="white"> UpdateProfile </font></a>
+    </button>
+    <button class="btn btn-primary">
+    <a href="{% url 'accounts:change' %}"><font color="white"> Change Password </font></a>
+    </button>
+{% endblock %}
